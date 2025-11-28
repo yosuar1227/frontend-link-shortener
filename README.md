@@ -50,3 +50,22 @@ con una experiencia fluida y agradable para el usuario.
 ------------------------------------------------------------------------
 
 ### Estructura del proyecto
+FRONTEND-LINK-SHORTENER/
+├── app/
+│   ├── public/
+│   ├── src/
+│   ├── .editorconfig
+│   ├── angular.json
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── README.md
+│   ├── tsconfig.app.json
+│   ├── tsconfig.json
+│   ├── tsconfig.spec.json
+│
+├── terraform/
+│   ├── backend.tf
+│   ├── data.tf
+│   ├── main.tf
+│   ├── providers.tf
+│   ├── variables.
