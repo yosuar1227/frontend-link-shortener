@@ -4,7 +4,7 @@ echo "Starting deployment..."
 
 echo "Building angular app..."
 cd ../app
-ng build --configuration=production
+npx ng build --configuration=production
 cd ../terraform 
 
 echo "Getting infraestrcutre details...."
