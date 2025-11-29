@@ -1,1 +1,18 @@
-<p>shortener works!</p>
+<div class="redirect-container">
+    <h2 class="title">Redireccionar URL corta</h2>
+
+    <div class="redirect-form">
+        <input type="text" placeholder="https://miweb.com/abc123" [(ngModel)]="url" />
+        <button (click)="doRedirect()">Ir</button>
+    </div>
+
+    <div class="error" *ngIf="error()">{{ error() }}</div>
+    <div class="loading" *ngIf="loading()">Procesando...</div>
+    <div class="loading" *ngIf="countdown() > 0">
+        Redirigiendo en <strong>{{ countdown() }}</strong>...
+    </div>
+</div>
+
+<div class="secondContainer">
+    <!-- form logic here -->
+</div>
