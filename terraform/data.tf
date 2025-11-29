@@ -7,13 +7,14 @@ data "aws_iam_policy_document" "s3_polcicy_document" {
     ]
 
     resources = [
-     "add correct data here"
+      aws_s3_bucket.frotendApp.arn,
+      "${aws_s3_bucket.frotendApp.arn}/*"
     ]
 
 
     principals {
-      type = "AWS"
-      identifiers = [ "" ] //identifier of clufront
+      type        = "AWS"
+      identifiers = [aws_cloudfront_origin_access_identity.frotendAppAccessIdentity.iam_arn] //identifier of clufront
     }
   }
 }
