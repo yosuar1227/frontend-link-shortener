@@ -1,1 +1,43 @@
-<p>stats works!</p>
+<h2 class="title">Estadísticas del Enlace</h2>
+
+<div class="form-container">
+    <input type="text" placeholder="Código del enlace" [(ngModel)]="code" />
+
+    <input type="date" (change)="onDateChange($event)" />
+
+    <button (click)="search()">Buscar</button>
+</div>
+
+<!-- Error -->
+<div class="error" *ngIf="error()">{{ error() }}</div>
+
+<!-- Loading -->
+<div class="loading" *ngIf="loading()">
+    Consultando información...
+</div>
+
+<!-- Resultados -->
+<div *ngIf="data() && !loading()" class="results">
+
+    <div class="summary-card">
+        <h3>Código: {{ data().linkCode }}</h3>
+
+        <p>Total de Clicks: <strong>{{ data().totalClicks }}</strong></p>
+
+        <h3 class="clickForDate" *ngIf="formattedDate() && withFormatDate()">
+            Clicks en {{ formattedDate() }}:
+            <strong>{{ data().totalClicksForCurrentDate }}</strong>
+        </h3>
+    </div>
+
+    <h3>Registros:</h3>
+
+    <div class="cards-container">
+        <div class="card" *ngFor="let click of data().clicksInfo">
+            <div class="card-content">
+                <p class="id"><strong>ID:</strong> {{ click.uuid.replace('LINK_CODE_CLICK-', '') }}</p>
+                <p class="date"><strong>Fecha:</strong> {{ click.created }}</p>
+            </div>
+        </div>
+    </div>
+</div>
