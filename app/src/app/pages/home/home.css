@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-top: 8vh;
+}
+
+.card {
+  width: 260px;
+  height: 180px;
+  background: #1e2538;
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+  color: #fff;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.5);
+}
+
+.card:hover {
+  transform: scale(1.05);
+  background: #283044;
+}

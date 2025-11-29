@@ -1,0 +1,32 @@
+.footer {
+  width: 100%;
+  height: 60px;
+  background: #1a1f2e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.5);
+}
+
+.tech-animation {
+  font-size: 18px;
+  background: linear-gradient(
+    270deg,
+    #61dafb,
+    #8c52ff,
+    #61dafb
+  );
+  background-size: 800% 800%;
+  animation: neon 8s infinite;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+@keyframes neon {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
